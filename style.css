@@ -1,0 +1,199 @@
+/* Reset básico para márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f6f8;
+    color: #333;
+    /* Flexbox en el body para mantener el footer siempre abajo */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* =========================================
+   BARRA DE MENÚ (HEADER)
+   ========================================= */
+header {
+    background-color: #212f3d;
+    color: #fff;
+    padding: 1rem 2rem;
+}
+
+.navbar {
+    /* Convierte el menú en contenedor Flexbox[cite: 1] */
+    display: flex;
+    /* Distribuye el logo y los enlaces a los extremos[cite: 1] */
+    justify-content: space-between;
+    /* Centra los elementos verticalmente[cite: 1] */
+    align-items: center;
+    flex-wrap: wrap; 
+    gap: 1rem;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem; /* Define el espacio entre los enlaces del menú[cite: 1] */
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #1abc9c;
+}
+
+/* =========================================
+   SECCIÓN DE PRODUCTOS Y TARJETAS
+   ========================================= */
+main {
+    flex: 1; /* Permite que el contenido principal crezca y ocupe el espacio */
+    padding: 3rem 2rem;
+}
+
+.seccion-productos h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2rem;
+    color: #212f3d;
+}
+
+.productos-container {
+    display: flex;
+    /* Permite que las tarjetas pasen a una nueva fila si no caben[cite: 1] */
+    flex-wrap: wrap; 
+    justify-content: center; 
+    /* Define el espacio entre las tarjetas[cite: 1] */
+    gap: 2.5rem; 
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Estilos de cada tarjeta[cite: 1] */
+.card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    
+    /* Flexbox dentro de la tarjeta para controlar la posición interna[cite: 1] */
+    display: flex;
+    flex-direction: column;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    /* flex: 1 permite que la zona de texto crezca, empujando el botón hacia abajo[cite: 1] */
+    flex: 1; 
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.card-content h3 {
+    font-size: 1.2rem;
+    color: #2c3e50;
+}
+
+.precio {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #1abc9c;
+}
+
+.btn-agregar {
+    background-color: #212f3d;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s;
+}
+
+.btn-agregar:hover {
+    background-color: #1abc9c;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+.footer {
+    background-color: #17202a;
+    color: #bdc3c7;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2rem;
+}
+
+.footer-section {
+    display: flex;
+    /* Alinea los textos del footer en columna[cite: 1] */
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.footer-section h4 {
+    color: #fff;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a, .footer-section p {
+    color: #bdc3c7;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.footer-section a:hover {
+    color: #1abc9c;
+}
+
+/* =========================================
+   DISEÑO RESPONSIVE (MEDIA QUERIES)[cite: 1]
+   ========================================= */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column; /* Apila el logo y el menú en pantallas pequeñas */
+        text-align: center;
+    }
+    
+    .nav-links {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
