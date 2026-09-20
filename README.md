@@ -1,2 +1,2 @@
-# html_css
-repo de la clase html y css
+# html_flexbox
+repo de la clase de layouts y flexbox de html
